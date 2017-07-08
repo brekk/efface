@@ -1,9 +1,9 @@
 {
-  "name": "nondescript",
+  "name": "efface",
   "version": "0.0.0",
   "description": "",
   "license": "ISC",
-  "main": "nondescript.js",
+  "main": "efface.js",
   "reveal": true,
   "ava": {
     "require": [
@@ -29,8 +29,8 @@
       "coverage",
       "src/*.spec.js",
       "src/index.js",
-      "nondescript.js",
-      "nondescript.es.js"
+      "efface.js",
+      "efface.es.js"
     ],
     "include": [
       "src/*.js",
@@ -98,6 +98,6 @@
     "rollup-plugin-progress": "^0.4.0",
     "xtrace": "^0.0.5"
   },
-  "repository": "https://github.com/brekk/nondescript",
+  "repository": "https://github.com/brekk/efface",
   "author": "brekk"
 }

@@ -4,11 +4,11 @@ module.exports = Object.assign(base, {
   entry: `src/index.js`,
   targets: [
     {
-      dest: `nondescript.js`,
+      dest: `efface.js`,
       format: `cjs`
     },
     {
-      dest: `nondescript.es.js`,
+      dest: `efface.es.js`,
       format: `es`
     }
   ]

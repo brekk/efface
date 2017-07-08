@@ -1,9 +1,9 @@
 import globby from 'globby'
-import del from 'del'
+// import del from 'del'
 import F from 'fluture'
 import L from 'partial.lenses'
 import readPkgUp from 'read-pkg-up'
-import {trace} from 'xtrace'
+// import {trace} from 'xtrace'
 import {curry} from 'katsu-curry'
 
 import map from 'ramda/src/map'
@@ -20,7 +20,7 @@ const R__ = {"@@functional/placeholder": true}
 
 const readPkgUpF = F.encaseP(readPkgUp)
 const globbyF = F.encaseP(globby)
-const rimraF = F.encaseP(del)
+// const rimraF = F.encaseP(del)
 
 const questions = {
   inputs: map(questionInput, [
@@ -116,14 +116,13 @@ const rewritePackageJSON = (o) => {
   )(o)
 }
 
-const nondescript = pipe(
+const efface = pipe(
   F.of,
   ap(readPkgUpF()),
   ap(allFoldersF()),
   ap(prompt(allQuestions)),
   map(rewritePackageJSON),
   map(j2),
-  map(trace(`shitbutts`)),
   fork(bad(`🔥`), good(`✨`))
 )
 
@@ -135,4 +134,4 @@ const consumer = curry(
   })
 )
 
-nondescript(consumer)
+efface(consumer)
