@@ -16,8 +16,6 @@ import {questionInput, prompt, questionConfirm} from './lazy-inquirer'
 import {bad, good, fork, ap, replace, j2, hasString, lastPast, toLowerCase} from './utils'
 import {CONFIG} from './constants'
 
-const R__ = {"@@functional/placeholder": true}
-
 const readPkgUpF = F.encaseP(readPkgUp)
 const globbyF = F.encaseP(globby)
 // const rimraF = F.encaseP(del)
@@ -31,7 +29,8 @@ const questions = {
     [CONFIG.ERASE.NODE_MODULES, `Wanna erase node_modules?`],
     [CONFIG.ERASE.PKG_DEPENDENCIES, `Wanna erase package.json.peerDependencies?`],
     [CONFIG.ERASE.PKG_DEV_DEPENDENCIES, `Wanna erase package.json.devDependencies?`],
-    [CONFIG.ERASE.PKG_PEER_DEPENDENCIES, `Wanna erase package.json.dependencies?`]
+    [CONFIG.ERASE.PKG_PEER_DEPENDENCIES, `Wanna erase package.json.dependencies?`],
+    [CONFIG.GENERATE.README, `Wanna generate a readme?`]
   ])
 }
 
@@ -91,9 +90,9 @@ const grabFromConfig = curry((key, o) => L.collectAs(
 
 const removeFromPackage = curry((erasers, obj) => reduce(
   (p, e) => L.remove([`package`, lastPast(`:`, e)], p),
-  R__,
+  obj,
   erasers
-)(obj))
+))
 
 const grabCleanName = pipe(
   L.get([`config`, CONFIG.PROJECT]),
