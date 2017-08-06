@@ -3,7 +3,7 @@ import $ from 'inquirer'
 import Future from 'fluture'
 
 import pipe from 'ramda/src/pipe'
-import map from 'ramda/src/map'
+// import map from 'ramda/src/map'
 import zip from 'ramda/src/zip'
 import fromPairs from 'ramda/src/fromPairs'
 

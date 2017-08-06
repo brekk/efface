@@ -4,7 +4,9 @@
   "description": "",
   "license": "ISC",
   "main": "efface.js",
-  "reveal": true,
+  "bin": {
+    "efface": "./efface.js"
+  },
   "ava": {
     "require": [
       "babel-register"
@@ -43,23 +45,20 @@
     ]
   },
   "scripts": {
-    "dependencies": "depcheck",
-    "readme": "documentation readme README.md -s \"API\" src/index.js",
-    "lint": "npm run lint:src && npm run lint:jsdoc",
-    "lint:src": "eslint src/*.js",
-    "lint:jsdoc": "documentation lint src/index.js",
-    "test": "nyc npm run test:ava",
-    "test:ava": "ava src/*.spec.js",
-    "build": "npm run build:main",
-    "build:main": "rollup -c config/rollup.config.main.js",
-    "due-diligence": "npm run lint && npm run test && npm run build && npm run readme",
-    "precommit": "npm run due-diligence"
+    "dependencies": "nps dependencies",
+    "readme": "nps readme",
+    "lint": "nps lint",
+    "test": "nps test",
+    "build": "nps build",
+    "care": "nps care",
+    "precommit": "nps precommit"
   },
   "dependencies": {
     "chalk": "^2.0.1",
     "del": "^3.0.0",
     "entrust": "^0.0.1",
-    "fluture": "^6.2.7",
+    "figlet": "^1.2.0",
+    "fluture": "^6.2.8",
     "globby": "^6.1.0",
     "inquirer": "^3.1.1",
     "katsu-curry": "^0.0.2",
@@ -85,6 +84,8 @@
     "eslint-plugin-standard": "^2.0.1",
     "husky": "^0.14.2",
     "istanbul": "0.4.x",
+    "nps": "^5.4.0",
+    "nps-utils": "^1.2.0",
     "nyc": "^11.0.3",
     "ramda": "^0.24.1",
     "rollup": "^0.43.0",

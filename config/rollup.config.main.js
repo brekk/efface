@@ -6,10 +6,6 @@ module.exports = Object.assign(base, {
     {
       dest: `efface.js`,
       format: `cjs`
-    },
-    {
-      dest: `efface.es.js`,
-      format: `es`
     }
   ]
 })
